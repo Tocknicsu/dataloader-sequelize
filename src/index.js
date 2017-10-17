@@ -285,7 +285,7 @@ function shimBelongsToMany(target) {
       let isCount = false;
       assert(this.paired, '.paired missing on belongsToMany association. You need to set up both sides of the association');
 
-      if (options.include || options.transaction) {
+      if (options.include || options.transaction || options.offset) {
         return original.apply(this, arguments);
       }
 
